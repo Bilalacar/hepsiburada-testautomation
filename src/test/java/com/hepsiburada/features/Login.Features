@@ -1,0 +1,47 @@
+Feature: Login Test Senaryoları
+
+  Scenario: Başarılı login testi
+    Given Hepsiburada anasayfada giriş yap veya üye ol butonuna tıklanır
+    When Hepsiburada anasayfada giriş yap butonuna tıklanır
+    And Giriş ekranında eposta alanına "geçerli mail adresi" yazılır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    And Giriş ekranında şifre alanına "geçerli şifre" yazılır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    Then Anasayfada kullanıcı girişi doğrulanır
+    
+    Scenario: Hatalı şifre girişi
+    Given Hepsiburada anasayfada giriş yap veya üye ol butonuna tıklanır
+    When Hepsiburada anasayfada giriş yap butonuna tıklanır
+    And Giriş ekranında eposta alanına "geçerli mail adresi" yazılır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    And Giriş ekranında şifre alanına "geçersiz şifre" yazılır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    Then 'Girdiğiniz şifre eksik veya hatalı.' uyarısı görülür
+    
+    Scenario: Hatalı eposta girişi
+    Given Hepsiburada anasayfada giriş yap veya üye ol butonuna tıklanır
+    When Hepsiburada anasayfada giriş yap butonuna tıklanır
+    And Giriş ekranında eposta alanına "geçersiz mail adresi" yazılır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    Then 'Geçerli bir e-posta adresi girmelisiniz.' uyarısı görülür
+    
+    Scenario:Boş eposta girişi
+    Given Hepsiburada anasayfada giriş yap veya üye ol butonuna tıklanır
+    When Hepsiburada anasayfada giriş yap butonuna tıklanır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    Then 'E-posta adresinizi veya telefon numaranızı girmelisiniz.' uyarısı görülür
+    
+    Scenario:Boş şifre girişi
+    Given Hepsiburada anasayfada giriş yap veya üye ol butonuna tıklanır
+    When Hepsiburada anasayfada giriş yap butonuna tıklanır
+    And Giriş ekranında eposta alanına "geçerli mail adresi" yazılır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    Then giriş yap butonunun disable olduğu görülür
+    
+    Scenario:Admin girişi
+    Given Hepsiburada anasayfada giriş yap veya üye ol butonuna tıklanır
+    When Hepsiburada anasayfada giriş yap butonuna tıklanır
+    And Giriş ekranında eposta alanına "admin" yazılır
+    And Giriş ekranında giriş yap butonuna tıklanır
+    Then 'Geçerli bir e-posta adresi girmelisiniz.' uyarısı görülür

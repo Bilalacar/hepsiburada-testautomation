@@ -1,0 +1,33 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# VsCode
+.vscode/
+.factorypath
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+/test-classes
+*.log
+*.log.1
+
+# testng
+.test-output
+/bin/
+testng-failed.xml
+target
+target/test-classes
+test-output
+test-output-tests
+logfile.log
